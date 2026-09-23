@@ -11,7 +11,7 @@ const education = [
     gpa: '3.9 / 4.0',
     logo: '/logos/northeastern.png',
     mono: 'NU',
-    courses: 'Bioinformatics Programming, Computational Biology, Data Analytics, Genomics, Transcriptomics',
+    courses: 'Bioinformatics Programming, Computational Biology, Data Analytics, Genomics, Transcriptomics, Adv Statistics Deep Learning, AI in Healthcare,',
   },
   {
     degree: 'Bachelor of Technology',
@@ -22,7 +22,7 @@ const education = [
     gpa: '3.27 / 4.0',
     logo: '/logos/mit-pune.png',
     mono: 'MIT',
-    courses: 'Systems Biology, Molecular Biology, Pharmacology, Statistics, Medical Imaging, Nanotechnology',
+    courses: 'Systems Biology, Molecular Biology, Pharmacology, Statistics, Medical Imaging, Nanotechnology, Biophysics, Biochemistry, Machine Learning',
   },
 ]
 
@@ -92,10 +92,10 @@ export default function Education() {
           {education.map(e => <EduCard key={e.school} e={e} />)}
         </div>
 
-        <h3 className="proj-group-title" style={{ marginTop: '3.5rem' }}>Certifications</h3>
+        <h3 className="h2 sub-h2" style={{ marginTop: '4rem' }}>Certifications</h3>
         <CertBrowser groups={certGroups} />
 
-        <h3 className="proj-group-title" style={{ marginTop: '3rem' }}>Awards</h3>
+        <h3 className="h2 sub-h2" style={{ marginTop: '3.5rem' }}>Awards</h3>
         <ul className="cert-list award-list">
           {awards.map(a => <li key={a}><div className="cert-title">{a}</div></li>)}
         </ul>
