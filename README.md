@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # Mayank Gandhi — Portfolio
 
 Personal portfolio website built with React + Vite, showcasing my work in bioinformatics, computational biology, and ML.
