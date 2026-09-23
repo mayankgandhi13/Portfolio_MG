@@ -2,7 +2,7 @@
 
 Personal portfolio website built with React + Vite, showcasing my work in bioinformatics, computational biology, and ML.
 
-🌐 **Live site:** https://mayankgandhi13.github.io
+🌐 **Live site:** https://mayank-gandhi.vercel.app
 
 ## Tech Stack
 
