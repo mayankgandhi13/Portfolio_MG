@@ -195,6 +195,37 @@ const projects = [
       '✓ Dashboard ready.',
     ],
   },
+  {
+    type: 'Wet lab, nanomaterials',
+    name: 'Cu-NPs',
+    undergrad: true,
+    fullName: 'Bio-templated Copper Nanoparticles — Antimicrobial, anti-cancer and wound-healing applications',
+    desc: 'Undergraduate team project at MIT ADT University (Jan 2022 – Feb 2023). Green co-precipitation synthesis of copper nanoparticles on a polysaccharide template, characterised with XRD, FTIR, FE-SEM, TEM and UV-Vis, then tested in MIC, MTT, biofilm and photocatalytic degradation assays and against four cancer cell lines (A549, MCF7, PA1, PC3).',
+    stack: ['Co-precipitation', 'XRD', 'FTIR', 'FE-SEM', 'MIC', 'MTT', 'Cell culture'],
+    lines: [
+      '> Synthesising Cu-NPs on a polysaccharide template...',
+      '> Characterising with XRD, FTIR, FE-SEM, TEM, UV-Vis...',
+      '> Antimicrobial: MIC and biofilm assays...',
+      '> Photocatalytic degradation...',
+      '> MTT on A549, MCF7, PA1, PC3...',
+      '✓ Applications evaluated.',
+    ],
+  },
+  {
+    type: 'Drug repurposing, docking',
+    name: 'MDR-SA-Docking',
+    undergrad: true,
+    fullName: 'Drug Repurposing for MDR S. aureus — FDA-approved kinase inhibitors',
+    desc: 'Undergraduate team project at MIT ADT University (Apr 2021 – Jan 2023). Screened FDA-approved kinase inhibitors as candidate ligands against public PDB structures of drug-resistant S. aureus, docking with AutoDock Vina and analysing poses in PyMOL, Discovery Studio and MarvinView, with data from PDB, PubChem, DrugBank and NCBI.',
+    stack: ['AutoDock Vina', 'PyMOL', 'Discovery Studio', 'GROMACS', 'PDB', 'DrugBank'],
+    lines: [
+      '> Fetching resistant S. aureus structures from PDB...',
+      '> Preparing kinase inhibitors from PubChem and DrugBank...',
+      '> Docking with AutoDock Vina...',
+      '> Inspecting poses in PyMOL and Discovery Studio...',
+      '✓ Docking complete.',
+    ],
+  },
 ]
 
 // Filter domains; colours match the clusters in Figure 1.
@@ -203,12 +234,14 @@ const DOMAINS = [
   { id: 'rust', label: 'Rust tools', color: 'var(--c2)' },
   { id: 'ml', label: 'Machine learning', color: 'var(--c3)' },
   { id: 'finance', label: 'Biotech finance', color: 'var(--c4)' },
+  { id: 'undergrad', label: 'Undergrad research', color: 'var(--c5)' },
   { id: 'building', label: 'In progress', color: 'var(--c6)' },
 ]
 
 function domainsOf(p) {
   const t = p.type
   const d = []
+  if (p.undergrad) d.push('undergrad')
   if (/single-cell|rna-seq|deconvolution|transcriptomics|R package|immunology/i.test(t)) d.push('rnaseq')
   if (/rust/i.test(t)) d.push('rust')
   if (/learning/i.test(t)) d.push('ml')
@@ -326,7 +359,7 @@ export default function Projects() {
         <div className="proj-header">
           <div>
             <h2 className="h2 big">Projects</h2>
-            <p className="intro">Pipelines, packages and analyses, plus the Rust and deep learning tools I am building now. Filter by area, or open a card to see its workflow.</p>
+            <p className="intro">Pipelines, packages and analyses, my undergraduate wet-lab and docking research, and the Rust and deep learning tools I am building now. Filter by area, or open a card to see its workflow.</p>
           </div>
           <div className="carousel-ctrl">
             <button type="button" className="round-btn" onClick={() => go(-1)} disabled={pos === 0} aria-label="Previous project">

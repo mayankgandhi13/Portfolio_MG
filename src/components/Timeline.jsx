@@ -6,7 +6,7 @@ function bullets(text) {
 function ExpCard({ item, index }) {
   const points = bullets(item.desc)
   return (
-    <li className="xcard" style={{ '--dom': item.color || 'var(--c1)' }}>
+    <li id={item.id} className="xcard" style={{ '--dom': item.color || 'var(--c1)' }}>
       <div className="xcard-side">
         <span className="xcard-num">{String(index + 1).padStart(2, '0')}</span>
         <div className="xcard-logo" style={item.logoBg ? { background: item.logoBg } : undefined}>
@@ -33,12 +33,13 @@ function ExpCard({ item, index }) {
   )
 }
 
-export default function Timeline({ id, title, intro, items }) {
+export default function Timeline({ id, title, intro, items, children }) {
   return (
     <section id={id} className="section">
       <div className="wrap">
         <h2 className="h2 big">{title}</h2>
         {intro ? <p className="intro">{intro}</p> : <div style={{ height: '1.75rem' }} />}
+        {children}
         <ol className="xlist">
           {items.map((item, i) => <ExpCard key={item.role + item.org} item={item} index={i} />)}
         </ol>

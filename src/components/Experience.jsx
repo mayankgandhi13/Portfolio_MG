@@ -1,8 +1,10 @@
 import Timeline from './Timeline'
+import Branches from './Branches'
 
 const experiences = [
   {
     role: 'Computational Biology/Data Science, Quality Assurance Co-op',
+    id: 'job-century',
     org: 'Century Therapeutics, Inc.',
     logo: '/logos/century-full.png',
     location: 'Boston, MA · Hybrid',
@@ -13,6 +15,7 @@ const experiences = [
   },
   {
     role: 'Software Developer Intern — Technical Delivery, D&S IT',
+    id: 'job-cencora',
     org: 'Cencora (formerly AmerisourceBergen)',
     logo: '/logos/cencora.png',
     location: 'Conshohocken, PA · Remote',
@@ -23,6 +26,7 @@ const experiences = [
   },
   {
     role: 'Application Specialist',
+    id: 'job-letsexcel',
     org: "Let's Excel Analytics Solutions",
     logo: '/logos/letsexcel.png',
     location: 'Gandhinagar, India · Remote',
@@ -33,6 +37,7 @@ const experiences = [
   },
   {
     role: 'Computational Researcher & Modeler Intern',
+    id: 'job-ncbs',
     org: 'National Centre for Biological Sciences (NCBS-TIFR)',
     logo: '/logos/ncbs-full.png',
     location: 'Bengaluru, India',
@@ -43,6 +48,7 @@ const experiences = [
   },
   {
     role: 'R&D Analyst & Quality Assurance Intern',
+    id: 'job-microlabs',
     org: 'Micro Labs Limited',
     logo: '/logos/microlabs.png',
     location: 'Mumbai, India',
@@ -54,5 +60,14 @@ const experiences = [
 ]
 
 export default function Experience() {
-  return <Timeline id="experience" title="Work experience" items={experiences} />
+  return (
+    <Timeline
+      id="experience"
+      title="Work experience"
+      intro="Different labs, different industries, but each one fed into the work I do now. Hover a branch to see what it brought with it."
+      items={experiences}
+    >
+      <Branches />
+    </Timeline>
+  )
 }
